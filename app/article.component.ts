@@ -3,7 +3,8 @@ import {Article} from './article.class'
 
 
 @Component({
-  selector: 'reddit-article'
+  selector: 'reddit-article',
+  inputs: ['article']
 })
 @View({
   template: `

@@ -25,7 +25,8 @@ System.register(['angular2/core', './article.class'], function(exports_1) {
                 }
                 ArticleComponent = __decorate([
                     core_1.Component({
-                        selector: 'reddit-article'
+                        selector: 'reddit-article',
+                        inputs: ['article']
                     }),
                     core_1.View({
                         template: "\n<article>\n  <div class=\"votes\">{{ article.votes }}</div>\n  <div class=\"main\">\n    <h2>\n      <a href=\"{{ link }}\">{{ article.title }}</a>\n    </h2>\n    <ul>\n      <li><a href (click)='article.voteUp()'>upvote</a></li>\n      <li><a href (click)='article.voteDown()'>downvote</a></li>\n    </ul>\n  </div>\n</article>\n"

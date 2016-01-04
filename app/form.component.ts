@@ -18,7 +18,7 @@ template: `
     </div>
     <button (click)="addArticle(newtitle, newlink)">Submit Link</button>
   </section>
-  <reddit-article></reddit-article><reddit-article></reddit-article>
+  <reddit-article *ngFor="#article of articles" [article]="article"></reddit-article>
 
 `,
 directives: [ArticleComponent]
