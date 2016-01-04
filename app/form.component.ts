@@ -1,4 +1,5 @@
 import {Component, View} from 'angular2/core';
+import {ArticleComponent} from './article.component'
 
 @Component({
   selector: 'reddit-form'
@@ -16,7 +17,9 @@ template: `
     </div>
     <button (click)="addArticle(newtitle, newlink)">Submit Link</button>
   </section>
-`
+  <reddit-article></reddit-article>
+`,
+directives: [ArticleComponent]
 })
 export class FormComponent {
   addArticle(title, link) {

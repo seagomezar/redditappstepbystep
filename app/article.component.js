@@ -24,9 +24,11 @@ System.register(['angular2/core'], function(exports_1) {
                 }
                 ArticleComponent.prototype.voteUp = function () {
                     this.votes += 1;
+                    return false;
                 };
                 ArticleComponent.prototype.voteDown = function () {
                     this.votes -= 1;
+                    return false;
                 };
                 ArticleComponent = __decorate([
                     core_1.Component({
