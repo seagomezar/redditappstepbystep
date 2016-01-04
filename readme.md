@@ -23,3 +23,5 @@ luego corremos el npm start para inicializar el motor de typescript y corremos e
 13- Anadimos return false para que no reinicie la pagina cada vez que votamos. Vamos meter dentro de nuestro componente form el reddit articulo para ello debemos quitar todas las inclusiones del boot.ts y simplemente lo importamos desde el form component, ademas le decimos que la vista va a tener una directiva llamada ArticleComponent e incluimos la etiqueta, tambien esta etiqueta la tuvimos que quitar del index.html
 
 14- Creamos una clase llamada article la cual permite crear objetos de tipo articulo y cambiamos el constructor para que en vez de crear un elemento hardcodeado, cree un objeto de tipo articulo, notese que desde la vista tambien se hace necesario trabajar con article.atributo, sin embargo esto todavia esta mal.
+
+15- Simplemente pasamos la funciones de votos a la clase y accedemos a ellas desde la vista con article. notese que al incluir un componente como directiva, este puede ser llamado mediante la etiqueta las veces que sea necesario.

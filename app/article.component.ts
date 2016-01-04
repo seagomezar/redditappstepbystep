@@ -9,6 +9,14 @@ class Article {
     this.link = link;
     this.votes = 0;
   }
+  voteUp() {
+    this.votes += 1;
+    return false;
+  }
+  voteDown() {
+    this.votes -= 1;
+    return false;
+  }
 }
 
 @Component({
@@ -23,8 +31,8 @@ class Article {
       <a href="{{ link }}">{{ article.title }}</a>
     </h2>
     <ul>
-      <li><a href (click)='voteUp()'>upvote</a></li>
-      <li><a href (click)='voteDown()'>downvote</a></li>
+      <li><a href (click)='article.voteUp()'>upvote</a></li>
+      <li><a href (click)='article.voteDown()'>downvote</a></li>
     </ul>
   </div>
 </article>
@@ -34,13 +42,5 @@ export class ArticleComponent {
   article: Article;
   constructor() {
     this.article = new Article('Angular 2', 'http://angular.io');
-  }
-  voteUp() {
-    this.article.votes += 1;
-    return false;
-  }
-  voteDown() {
-    this.article.votes -= 1;
-    return false;
   }
 }

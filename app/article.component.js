@@ -22,26 +22,26 @@ System.register(['angular2/core'], function(exports_1) {
                     this.link = link;
                     this.votes = 0;
                 }
+                Article.prototype.voteUp = function () {
+                    this.votes += 1;
+                    return false;
+                };
+                Article.prototype.voteDown = function () {
+                    this.votes -= 1;
+                    return false;
+                };
                 return Article;
             })();
             ArticleComponent = (function () {
                 function ArticleComponent() {
                     this.article = new Article('Angular 2', 'http://angular.io');
                 }
-                ArticleComponent.prototype.voteUp = function () {
-                    this.article.votes += 1;
-                    return false;
-                };
-                ArticleComponent.prototype.voteDown = function () {
-                    this.article.votes -= 1;
-                    return false;
-                };
                 ArticleComponent = __decorate([
                     core_1.Component({
                         selector: 'reddit-article'
                     }),
                     core_1.View({
-                        template: "\n<article>\n  <div class=\"votes\">{{ article.votes }}</div>\n  <div class=\"main\">\n    <h2>\n      <a href=\"{{ link }}\">{{ article.title }}</a>\n    </h2>\n    <ul>\n      <li><a href (click)='voteUp()'>upvote</a></li>\n      <li><a href (click)='voteDown()'>downvote</a></li>\n    </ul>\n  </div>\n</article>\n"
+                        template: "\n<article>\n  <div class=\"votes\">{{ article.votes }}</div>\n  <div class=\"main\">\n    <h2>\n      <a href=\"{{ link }}\">{{ article.title }}</a>\n    </h2>\n    <ul>\n      <li><a href (click)='article.voteUp()'>upvote</a></li>\n      <li><a href (click)='article.voteDown()'>downvote</a></li>\n    </ul>\n  </div>\n</article>\n"
                     }), 
                     __metadata('design:paramtypes', [])
                 ], ArticleComponent);

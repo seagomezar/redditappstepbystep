@@ -30,7 +30,7 @@ System.register(['angular2/core', './article.component'], function(exports_1) {
                         selector: 'reddit-form'
                     }),
                     core_1.View({
-                        template: "\n  <section class=\"new-link\">\n    <div class=\"control-group\">\n      <div><label for=\"title\">Title:</label></div>\n      <div><input name=\"title\" #newtitle></div>\n    </div>\n    <div class=\"control-group\">\n      <div><label for=\"link\">Link:</label></div>\n      <div><input name=\"link\" #newlink></div>\n    </div>\n    <button (click)=\"addArticle(newtitle, newlink)\">Submit Link</button>\n  </section>\n  <reddit-article></reddit-article>\n",
+                        template: "\n  <section class=\"new-link\">\n    <div class=\"control-group\">\n      <div><label for=\"title\">Title:</label></div>\n      <div><input name=\"title\" #newtitle></div>\n    </div>\n    <div class=\"control-group\">\n      <div><label for=\"link\">Link:</label></div>\n      <div><input name=\"link\" #newlink></div>\n    </div>\n    <button (click)=\"addArticle(newtitle, newlink)\">Submit Link</button>\n  </section>\n  <reddit-article></reddit-article><reddit-article></reddit-article>\n\n",
                         directives: [article_component_1.ArticleComponent]
                     }), 
                     __metadata('design:paramtypes', [])
