@@ -13,3 +13,5 @@ But it is possible to load a component in a different enviroment. We might load 
 luego corremos el npm start para inicializar el motor de typescript y corremos el live server
 
 9- Incluimos los estilos preparados
+
+10- Creamos nuestro form component incluimos simplemente la vista y el component, hacemos la clase exportable y vamos al archivo boot.ts alli importamos el componente y lo incluimos en nuestra app, sin embargo tambien es necesario poner en nuestro archivo index.html la etiqueta que hemos hecho.
