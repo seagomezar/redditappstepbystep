@@ -11,3 +11,5 @@ But it is possible to load a component in a different enviroment. We might load 
 8- Creamos el archivo index.html donde incluimos las librerias e inicializamos la aplicacion
 
 luego corremos el npm start para inicializar el motor de typescript y corremos el live server
+
+9- Incluimos los estilos preparados
