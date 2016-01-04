@@ -1,4 +1,5 @@
 import {Component, View} from 'angular2/core';
+import {Article} from './article.class'
 import {ArticleComponent} from './article.component'
 
 @Component({
@@ -23,7 +24,15 @@ template: `
 directives: [ArticleComponent]
 })
 export class FormComponent {
+  articles: Array<Article>;
+  constructor(){
+    this.articles = [
+      new Article('Angular 2', 'http://angular.io'),
+      new Article('Fullstack', 'http://fullstack.io')
+    ];
+  }
   addArticle(title, link) {
-    console.log("Adding article with title", title.value, "and link", link.value);
+    this.articles.push(new Article(title.value, link.value));
+    console.log('Acabe de anadir un nuevo articulo',this.articles);
   }
 }

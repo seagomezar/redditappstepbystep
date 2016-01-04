@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1) {
+System.register(['angular2/core', './article.class'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,33 +8,20 @@ System.register(['angular2/core'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
-    var Article, ArticleComponent;
+    var core_1, article_class_1;
+    var ArticleComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (article_class_1_1) {
+                article_class_1 = article_class_1_1;
             }],
         execute: function() {
-            Article = (function () {
-                function Article(title, link) {
-                    this.title = title;
-                    this.link = link;
-                    this.votes = 0;
-                }
-                Article.prototype.voteUp = function () {
-                    this.votes += 1;
-                    return false;
-                };
-                Article.prototype.voteDown = function () {
-                    this.votes -= 1;
-                    return false;
-                };
-                return Article;
-            })();
             ArticleComponent = (function () {
                 function ArticleComponent() {
-                    this.article = new Article('Angular 2', 'http://angular.io');
+                    this.article = new article_class_1.Article('Angular 2', 'http://angular.io');
                 }
                 ArticleComponent = __decorate([
                     core_1.Component({

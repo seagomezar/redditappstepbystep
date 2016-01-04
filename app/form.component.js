@@ -1,4 +1,4 @@
-System.register(['angular2/core', './article.component'], function(exports_1) {
+System.register(['angular2/core', './article.class', './article.component'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,12 +8,15 @@ System.register(['angular2/core', './article.component'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, article_component_1;
+    var core_1, article_class_1, article_component_1;
     var FormComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (article_class_1_1) {
+                article_class_1 = article_class_1_1;
             },
             function (article_component_1_1) {
                 article_component_1 = article_component_1_1;
@@ -21,9 +24,14 @@ System.register(['angular2/core', './article.component'], function(exports_1) {
         execute: function() {
             FormComponent = (function () {
                 function FormComponent() {
+                    this.articles = [
+                        new article_class_1.Article('Angular 2', 'http://angular.io'),
+                        new article_class_1.Article('Fullstack', 'http://fullstack.io')
+                    ];
                 }
                 FormComponent.prototype.addArticle = function (title, link) {
-                    console.log("Adding article with title", title.value, "and link", link.value);
+                    this.articles.push(new article_class_1.Article(title.value, link.value));
+                    console.log('Acabe de anadir un nuevo articulo', this.articles);
                 };
                 FormComponent = __decorate([
                     core_1.Component({
