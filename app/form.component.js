@@ -19,12 +19,15 @@ System.register(['angular2/core'], function(exports_1) {
             FormComponent = (function () {
                 function FormComponent() {
                 }
+                FormComponent.prototype.addArticle = function (title, link) {
+                    console.log("Adding article with title", title.value, "and link", link.value);
+                };
                 FormComponent = __decorate([
                     core_1.Component({
                         selector: 'reddit-form'
                     }),
                     core_1.View({
-                        template: "\n  <section class=\"new-link\">\n    <div class=\"control-group\">\n      <div><label for=\"title\">Title:</label></div>\n      <div><input name=\"title\"></div>\n    </div>\n    <div class=\"control-group\">\n      <div><label for=\"link\">Link:</label></div>\n      <div><input name=\"link\"></div>\n    </div>\n    <button>Submit Link</button>\n  </section>\n"
+                        template: "\n  <section class=\"new-link\">\n    <div class=\"control-group\">\n      <div><label for=\"title\">Title:</label></div>\n      <div><input name=\"title\" #newtitle></div>\n    </div>\n    <div class=\"control-group\">\n      <div><label for=\"link\">Link:</label></div>\n      <div><input name=\"link\" #newlink></div>\n    </div>\n    <button (click)=\"addArticle(newtitle, newlink)\">Submit Link</button>\n  </section>\n"
                     }), 
                     __metadata('design:paramtypes', [])
                 ], FormComponent);

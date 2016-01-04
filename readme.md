@@ -15,3 +15,5 @@ luego corremos el npm start para inicializar el motor de typescript y corremos e
 9- Incluimos los estilos preparados
 
 10- Creamos nuestro form component incluimos simplemente la vista y el component, hacemos la clase exportable y vamos al archivo boot.ts alli importamos el componente y lo incluimos en nuestra app, sin embargo tambien es necesario poner en nuestro archivo index.html la etiqueta que hemos hecho.
+
+11- Anadimos una funcion a nuestro boton y anadimos modelos a los inputs, esto con el fin de que el componente pueda leerlos y mostrarlos por consola, aca es importante hablar de la funcionalidad las clases y como puedo definir metodos dentro de ella.
