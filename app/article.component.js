@@ -9,25 +9,31 @@ System.register(['angular2/core'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var ArticleComponent;
+    var Article, ArticleComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
+            Article = (function () {
+                function Article(title, link) {
+                    this.title = title;
+                    this.link = link;
+                    this.votes = 0;
+                }
+                return Article;
+            })();
             ArticleComponent = (function () {
                 function ArticleComponent() {
-                    this.votes = 10;
-                    this.title = 'Angular 2';
-                    this.link = 'http://angular.io';
+                    this.article = new Article('Angular 2', 'http://angular.io');
                 }
                 ArticleComponent.prototype.voteUp = function () {
-                    this.votes += 1;
+                    this.article.votes += 1;
                     return false;
                 };
                 ArticleComponent.prototype.voteDown = function () {
-                    this.votes -= 1;
+                    this.article.votes -= 1;
                     return false;
                 };
                 ArticleComponent = __decorate([
@@ -35,7 +41,7 @@ System.register(['angular2/core'], function(exports_1) {
                         selector: 'reddit-article'
                     }),
                     core_1.View({
-                        template: "\n<article>\n  <div class=\"votes\">{{ votes }}</div>\n  <div class=\"main\">\n    <h2>\n      <a href=\"{{ link }}\">{{ title }}</a>\n    </h2>\n    <ul>\n      <li><a href (click)='voteUp()'>upvote</a></li>\n      <li><a href (click)='voteDown()'>downvote</a></li>\n    </ul>\n  </div>\n</article>\n"
+                        template: "\n<article>\n  <div class=\"votes\">{{ article.votes }}</div>\n  <div class=\"main\">\n    <h2>\n      <a href=\"{{ link }}\">{{ article.title }}</a>\n    </h2>\n    <ul>\n      <li><a href (click)='voteUp()'>upvote</a></li>\n      <li><a href (click)='voteDown()'>downvote</a></li>\n    </ul>\n  </div>\n</article>\n"
                     }), 
                     __metadata('design:paramtypes', [])
                 ], ArticleComponent);

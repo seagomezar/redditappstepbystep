@@ -1,14 +1,26 @@
 import {Component, View} from 'angular2/core';
+
+class Article {
+  title: string;
+  link: string;
+  votes: number;
+  constructor(title, link) {
+    this.title = title;
+    this.link = link;
+    this.votes = 0;
+  }
+}
+
 @Component({
   selector: 'reddit-article'
 })
 @View({
   template: `
 <article>
-  <div class="votes">{{ votes }}</div>
+  <div class="votes">{{ article.votes }}</div>
   <div class="main">
     <h2>
-      <a href="{{ link }}">{{ title }}</a>
+      <a href="{{ link }}">{{ article.title }}</a>
     </h2>
     <ul>
       <li><a href (click)='voteUp()'>upvote</a></li>
@@ -19,20 +31,16 @@ import {Component, View} from 'angular2/core';
 `
 })
 export class ArticleComponent {
-  votes: number;
-  title: string;
-  link: string;
+  article: Article;
   constructor() {
-    this.votes = 10;
-    this.title = 'Angular 2';
-    this.link = 'http://angular.io';
+    this.article = new Article('Angular 2', 'http://angular.io');
   }
   voteUp() {
-    this.votes += 1;
+    this.article.votes += 1;
     return false;
   }
   voteDown() {
-    this.votes -= 1;
+    this.article.votes -= 1;
     return false;
   }
 }

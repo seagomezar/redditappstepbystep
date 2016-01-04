@@ -21,3 +21,5 @@ luego corremos el npm start para inicializar el motor de typescript y corremos e
 12- Creamos el componente article y lo incluimos en boot.ts, aqui se aplica el concepto de constructor. No se pueden incluir mas de una etiqueta en un componente
 
 13- Anadimos return false para que no reinicie la pagina cada vez que votamos. Vamos meter dentro de nuestro componente form el reddit articulo para ello debemos quitar todas las inclusiones del boot.ts y simplemente lo importamos desde el form component, ademas le decimos que la vista va a tener una directiva llamada ArticleComponent e incluimos la etiqueta, tambien esta etiqueta la tuvimos que quitar del index.html
+
+14- Creamos una clase llamada article la cual permite crear objetos de tipo articulo y cambiamos el constructor para que en vez de crear un elemento hardcodeado, cree un objeto de tipo articulo, notese que desde la vista tambien se hace necesario trabajar con article.atributo, sin embargo esto todavia esta mal.
