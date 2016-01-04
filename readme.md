@@ -9,3 +9,5 @@ incluimos a Component del core de angular2 el cual podemos llamar usando typescr
 
 But it is possible to load a component in a different enviroment. We might load it on a mobile device with Apache Cordova We might wish to render the first page of our application on the server to improve launch performance or facilitate SEO.
 8- Creamos el archivo index.html donde incluimos las librerias e inicializamos la aplicacion
+
+luego corremos el npm start para inicializar el motor de typescript y corremos el live server
