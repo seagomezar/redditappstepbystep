@@ -18,7 +18,7 @@ template: `
     </div>
     <button (click)="addArticle(newtitle, newlink)">Submit Link</button>
   </section>
-  <reddit-article *ngFor="#article of articles" [article]="article"></reddit-article>
+  <reddit-article *ngFor="#article of sortArticles(articles)" [article]="article"></reddit-article>
 
 `,
 directives: [ArticleComponent]
@@ -31,8 +31,19 @@ export class FormComponent {
       new Article('Fullstack', 'http://fullstack.io')
     ];
   }
+  sortArticles(articles){
+    return articles.sort(function(a,b) {return b.votes - a.votes});
+  }
   addArticle(title, link) {
-    this.articles.push(new Article(title.value, link.value));
-    console.log('Acabe de anadir un nuevo articulo',this.articles);
+    if(title.value && link.value){
+      this.articles.push(new Article(title.value, link.value));
+      //Limpiamos el codigo
+      title.value = '';
+      link.value = '';
+    }
+    else{
+      alert("Link and Title are required");
+    }
+
   }
 }

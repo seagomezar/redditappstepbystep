@@ -12,7 +12,7 @@ import {Article} from './article.class'
   <div class="votes">{{ article.votes }}</div>
   <div class="main">
     <h2>
-      <a href="{{ link }}">{{ article.title }}</a>
+      <a href="{{ article.link }}" target="_blank">{{ article.title }}</a>
     </h2>
     <ul>
       <li><a href (click)='article.voteUp()'>upvote</a></li>
@@ -23,8 +23,4 @@ import {Article} from './article.class'
 `
 })
 export class ArticleComponent {
-  article: Article;
-  constructor() {
-    this.article = new Article('Angular 2', 'http://angular.io');
-  }
 }

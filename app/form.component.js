@@ -29,16 +29,26 @@ System.register(['angular2/core', './article.class', './article.component'], fun
                         new article_class_1.Article('Fullstack', 'http://fullstack.io')
                     ];
                 }
+                FormComponent.prototype.sortArticles = function (articles) {
+                    return articles.sort(function (a, b) { return b.votes - a.votes; });
+                };
                 FormComponent.prototype.addArticle = function (title, link) {
-                    this.articles.push(new article_class_1.Article(title.value, link.value));
-                    console.log('Acabe de anadir un nuevo articulo', this.articles);
+                    if (title.value && link.value) {
+                        this.articles.push(new article_class_1.Article(title.value, link.value));
+                        //Limpiamos el codigo
+                        title.value = '';
+                        link.value = '';
+                    }
+                    else {
+                        alert("Link and Title are required");
+                    }
                 };
                 FormComponent = __decorate([
                     core_1.Component({
                         selector: 'reddit-form'
                     }),
                     core_1.View({
-                        template: "\n  <section class=\"new-link\">\n    <div class=\"control-group\">\n      <div><label for=\"title\">Title:</label></div>\n      <div><input name=\"title\" #newtitle></div>\n    </div>\n    <div class=\"control-group\">\n      <div><label for=\"link\">Link:</label></div>\n      <div><input name=\"link\" #newlink></div>\n    </div>\n    <button (click)=\"addArticle(newtitle, newlink)\">Submit Link</button>\n  </section>\n  <reddit-article *ngFor=\"#article of articles\" [article]=\"article\"></reddit-article>\n\n",
+                        template: "\n  <section class=\"new-link\">\n    <div class=\"control-group\">\n      <div><label for=\"title\">Title:</label></div>\n      <div><input name=\"title\" #newtitle></div>\n    </div>\n    <div class=\"control-group\">\n      <div><label for=\"link\">Link:</label></div>\n      <div><input name=\"link\" #newlink></div>\n    </div>\n    <button (click)=\"addArticle(newtitle, newlink)\">Submit Link</button>\n  </section>\n  <reddit-article *ngFor=\"#article of sortArticles(articles)\" [article]=\"article\"></reddit-article>\n\n",
                         directives: [article_component_1.ArticleComponent]
                     }), 
                     __metadata('design:paramtypes', [])
