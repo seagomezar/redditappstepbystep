@@ -1,5 +1,4 @@
 System.register([], function(exports_1) {
-    "use strict";
     var Article;
     return {
         setters:[],
@@ -19,7 +18,7 @@ System.register([], function(exports_1) {
                     return false;
                 };
                 return Article;
-            }());
+            })();
             exports_1("Article", Article);
         }
     }

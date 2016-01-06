@@ -1,5 +1,4 @@
 System.register(['angular2/core', './article.class', './article.component'], function(exports_1) {
-    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -49,13 +48,13 @@ System.register(['angular2/core', './article.class', './article.component'], fun
                         selector: 'reddit-form'
                     }),
                     core_1.View({
-                        template: "\n  <section class=\"new-link\">\n    <div class=\"control-group\">\n      <div><label for=\"title\">Title:</label></div>\n      <div><input name=\"title\" #newtitle></div>\n    </div>\n    <div class=\"control-group\">\n      <div><label for=\"link\">Link:</label></div>\n      <div><input name=\"link\" #newlink></div>\n    </div>\n    <button (click)=\"addArticle(newtitle, newlink)\">Submit Link</button>\n  </section>\n  <reddit-article *ngFor=\"#article of sortArticles(articles)\" [article]=\"article\"></reddit-article>\n\n",
+                        template: "\n  <section class=\"new-link\">\n    <div class=\"control-group\">\n      <div><label for=\"title\">Title:</label></div>\n      <div><input name=\"title\" #newtitle></div>\n    </div>\n    <div class=\"control-group\">\n      <div><label for=\"link\">Link:</label></div>\n      <div><input name=\"link\" #newlink></div>\n    </div>\n    <button (click)=\"addArticle(newtitle, newlink)\">Submit Link</button>\n  </section>\n  <reddit-article *ngFor=\"#article of sortArticles(articles)\" [article]=\"article\"></reddit-article>\n",
                         directives: [article_component_1.ArticleComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], FormComponent);
                 return FormComponent;
-            }());
+            })();
             exports_1("FormComponent", FormComponent);
         }
     }

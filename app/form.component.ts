@@ -19,7 +19,6 @@ template: `
     <button (click)="addArticle(newtitle, newlink)">Submit Link</button>
   </section>
   <reddit-article *ngFor="#article of sortArticles(articles)" [article]="article"></reddit-article>
-
 `,
 directives: [ArticleComponent]
 })
