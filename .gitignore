@@ -1,3 +1,4 @@
 node_modules/
+npm_debug.log
 app/*.js
 app/*.js.map
